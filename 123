@@ -3555,13 +3555,13 @@ function Fatality:CreateConfigWindow(Root: ScreenGui , Fatal , Button: ImageButt
 	local UIStroke_3 = Instance.new("UIStroke")
 	local UICorner_3 = Instance.new("UICorner")
 	local TextBox = Instance.new("TextBox")
-	local AddConfigButton = Instance.new("ImageButton")
+
 	local UICorner_4 = Instance.new("UICorner")
-	local GetConfigButton = Instance.new("ImageButton")
+
 	local UICorner_5 = Instance.new("UICorner")
-	local SaveConfigButton = Instance.new("ImageButton")
+	
 	local UICorner_6 = Instance.new("UICorner")
-	local DeleteButton = Instance.new("ImageButton")
+
 	local UICorner_7 = Instance.new("UICorner")
 
 	Fatality:ScrollSignal(ScrollingFrame,UIListLayout,"Y");
@@ -3611,21 +3611,6 @@ function Fatality:CreateConfigWindow(Root: ScreenGui , Fatal , Button: ImageButt
 				TextTransparency = 0.5
 			})
 
-			Fatality:CreateAnimation(AddConfigButton,0.3,{
-				ImageTransparency = 0.500
-			})
-
-			Fatality:CreateAnimation(GetConfigButton,0.3,{
-				ImageTransparency = 0.500
-			})
-
-			Fatality:CreateAnimation(SaveConfigButton,0.3,{
-				ImageTransparency = 0.500
-			})
-
-			Fatality:CreateAnimation(DeleteButton,0.3,{
-				ImageTransparency = 0.2500
-			})
 
 			Fatality:CreateAnimation(DropShadow,0.3,{
 				ImageTransparency = 0.75
@@ -3671,21 +3656,7 @@ function Fatality:CreateConfigWindow(Root: ScreenGui , Fatal , Button: ImageButt
 				TextTransparency = 1
 			})
 
-			Fatality:CreateAnimation(AddConfigButton,0.3,{
-				ImageTransparency = 1
-			})
 
-			Fatality:CreateAnimation(GetConfigButton,0.3,{
-				ImageTransparency = 1
-			})
-
-			Fatality:CreateAnimation(SaveConfigButton,0.3,{
-				ImageTransparency = 1
-			})
-
-			Fatality:CreateAnimation(DeleteButton,0.3,{
-				ImageTransparency = 1
-			})
 		end;
 	end;
 
@@ -3785,130 +3756,6 @@ function Fatality:CreateConfigWindow(Root: ScreenGui , Fatal , Button: ImageButt
 	TextBox.TextTransparency = 0.500
 	TextBox.TextXAlignment = Enum.TextXAlignment.Left
 
-	AddConfigButton.Name = "AddConfigButton"
-	AddConfigButton.Parent = InputFrame
-	AddConfigButton.AnchorPoint = Vector2.new(0, 0.5)
-	AddConfigButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-	AddConfigButton.BackgroundTransparency = 1.000
-	AddConfigButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	AddConfigButton.BorderSizePixel = 0
-	AddConfigButton.Position = UDim2.new(1, 8, 0.5, 0)
-	AddConfigButton.Size = UDim2.new(0, 15, 0, 15)
-	AddConfigButton.ZIndex = 209
-	AddConfigButton.Image = "rbxassetid://10734923868"
-	AddConfigButton.ImageTransparency = 0.500
-
-	UICorner_4.CornerRadius = UDim.new(1, 0)
-	UICorner_4.Parent = AddConfigButton
-
-	GetConfigButton.Name = "GetConfigButton"
-	GetConfigButton.Parent = ConfigWindowFrame
-	GetConfigButton.AnchorPoint = Vector2.new(1, 0)
-	GetConfigButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-	GetConfigButton.BackgroundTransparency = 1.000
-	GetConfigButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	GetConfigButton.BorderSizePixel = 0
-	GetConfigButton.Position = UDim2.new(1, -8, 0, 10)
-	GetConfigButton.Size = UDim2.new(0, 15, 0, 15)
-	GetConfigButton.ZIndex = 209
-	GetConfigButton.Image = "rbxassetid://10723387265"
-	GetConfigButton.ImageTransparency = 0.500
-
-	UICorner_5.CornerRadius = UDim.new(1, 0)
-	UICorner_5.Parent = GetConfigButton
-
-	SaveConfigButton.Name = "SaveConfigButton"
-	SaveConfigButton.Parent = ConfigWindowFrame
-	SaveConfigButton.AnchorPoint = Vector2.new(1, 0)
-	SaveConfigButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-	SaveConfigButton.BackgroundTransparency = 1.000
-	SaveConfigButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	SaveConfigButton.BorderSizePixel = 0
-	SaveConfigButton.Position = UDim2.new(1, -8, 0, 28)
-	SaveConfigButton.Size = UDim2.new(0, 15, 0, 15)
-	SaveConfigButton.ZIndex = 209
-	SaveConfigButton.Image = "rbxassetid://10734941499"
-	SaveConfigButton.ImageTransparency = 0.500
-
-	UICorner_6.CornerRadius = UDim.new(1, 0)
-	UICorner_6.Parent = SaveConfigButton
-
-	DeleteButton.Name = "DeleteButton"
-	DeleteButton.Parent = ConfigWindowFrame
-	DeleteButton.AnchorPoint = Vector2.new(1, 0)
-	DeleteButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-	DeleteButton.BackgroundTransparency = 1.000
-	DeleteButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	DeleteButton.BorderSizePixel = 0
-	DeleteButton.Position = UDim2.new(1, -8, 0, 55)
-	DeleteButton.Size = UDim2.new(0, 15, 0, 15)
-	DeleteButton.ZIndex = 209
-	DeleteButton.Image = "rbxassetid://10747362393"
-	DeleteButton.ImageColor3 = Fatality.Colors.Main
-	DeleteButton.ImageTransparency = 0.250
-
-	UICorner_7.CornerRadius = UDim.new(1, 0)
-	UICorner_7.Parent = DeleteButton
-
-	Button.MouseButton1Click:Connect(function()
-		ElementToggle(true);
-	end);
-
-	Fatality:CreateHover(DeleteButton,function(bool)
-		if bool then
-			Fatality:CreateAnimation(DeleteButton,0.3,{
-				ImageTransparency = 0;
-			})
-		else
-			Fatality:CreateAnimation(DeleteButton,0.3,{
-				ImageTransparency = 0.35;
-			})
-		end;
-	end);
-
-	Fatality:CreateHover(SaveConfigButton,function(bool)
-		if bool then
-			Fatality:CreateAnimation(SaveConfigButton,0.3,{
-				ImageTransparency = 0.15;
-			})
-		else
-			Fatality:CreateAnimation(SaveConfigButton,0.3,{
-				ImageTransparency = 0.500;
-			})
-		end;
-	end);
-
-	Fatality:CreateHover(GetConfigButton,function(bool)
-		if bool then
-			Fatality:CreateAnimation(GetConfigButton,0.3,{
-				ImageTransparency = 0.15;
-			})
-		else
-			Fatality:CreateAnimation(GetConfigButton,0.3,{
-				ImageTransparency = 0.500;
-			})
-		end;
-	end);
-
-	Fatality:CreateHover(AddConfigButton,function(bool)
-		if bool then
-			Fatality:CreateAnimation(AddConfigButton,0.3,{
-				ImageTransparency = 0.15;
-			})
-		else
-			Fatality:CreateAnimation(AddConfigButton,0.3,{
-				ImageTransparency = 0.500;
-			})
-		end;
-	end);
-
-	game:GetService('UserInputService').InputBegan:Connect(function(Input,Typing)
-		if Input.UserInputType == Enum.UserInputType.Touch or Input.UserInputType == Enum.UserInputType.MouseButton1 then
-			if UIToggle and not Fatality:IsMouseOverFrame(ConfigWindowFrame) then
-				ElementToggle(false);
-			end;
-		end;
-	end);
 
 	local new_button = function()
 		local db_selected = Instance.new("TextButton")
@@ -3980,63 +3827,6 @@ function Fatality:CreateConfigWindow(Root: ScreenGui , Fatal , Button: ImageButt
 			end;
 		end,
 
-		ReloadConfig = function()
-			assert(res.ConfigDirectory , "Config directory not found");
-
-			local files = {};
-
-			for i,v in next , listfiles(res.ConfigDirectory) do
-				local spl = (string.find(v,'/',1,true) and string.split(v,'/')) or (string.find(v,'\\',1,true) and string.split(v,'\\'));
-				local name = spl[#spl];
-
-				table.insert(files,name);
-			end;
-
-			res:SetFiles(files,true);
-			res:Refresh();
-		end,
-
-		DeleteConfig = function(name)
-			assert(res.ConfigDirectory , "Config directory not found");
-
-			local path = res.ConfigDirectory..'/'..tostring(name);
-
-			if isfile(path) then
-				delfile(path)
-			end;
-		end,
-
-		SaveConfig = function(name,content)
-			if string.find(name,'/',1,true) or string.find(name,'\\',1,true) or string.find(name,':',1,true) then
-				return;	
-			end;
-
-			assert(res.ConfigDirectory , "Config directory not found");
-
-			local path = res.ConfigDirectory..'/'..tostring(name);
-
-			writefile(path , content);
-		end,
-
-		LoadConfig = function(name)
-
-			assert(res.ConfigDirectory , "Config directory not found");
-
-			local path = res.ConfigDirectory..'/'..tostring(name);
-
-			if isfile(path) then
-				local decoded = game:GetService('HttpService'):JSONDecode(readfile(path));
-
-				Fatal.Notifier:Notify({
-					Title = "Config",
-					Content = "Loaded config '"..tostring(name).."'",
-					Icon = "settings",
-					Duration = 4,
-				});
-
-				Fatal:LoadConfig(decoded);
-			end;
-		end,
 
 		Init = function(Name: string,Folder: string)
 			if not isfolder(Folder or "Fatality") then
@@ -4052,87 +3842,8 @@ function Fatality:CreateConfigWindow(Root: ScreenGui , Fatal , Button: ImageButt
 			if not isfolder(cfgPath) then
 				makefolder(cfgPath)
 			end;
-
-			res.ConfigDirectory = cfgPath;
-
-			AddConfigButton.MouseButton1Click:Connect(function()
-				local configName = TextBox.Text;
-
-				if not configName:byte() then return end;
-
-				local flags = Fatal:GetFlagConfig();
-
-				flags.Info = {
-					Name = Name,
-					Folder = Folder,
-					ConfigName = configName,
-				};
-
-				local code = game:GetService('HttpService'):JSONEncode(flags);
-
-				res:SaveConfig(configName , code);
-				res:ReloadConfig();
-
-				Fatal.Notifier:Notify({
-					Title = "Config",
-					Content = "Saved config '"..tostring(configName).."'",
-					Icon = "settings",
-					Duration = 4,
-				});
-
-				TextBox.Text = "";
-			end);
-
-			GetConfigButton.MouseButton1Click:Connect(function()
-				if import and import.Name then
-					res:LoadConfig(import.Name);
-				end;
-			end);
-
-			SaveConfigButton.MouseButton1Click:Connect(function()
-				if import and import.Name then
-					local flags = Fatal:GetFlagConfig();
-					local configName = import.Name;
-
-					flags.Info = {
-						Name = Name,
-						Folder = Folder,
-						ConfigName = configName,
-						Type = "Overwrite"
-					};
-
-					Fatal.Notifier:Notify({
-						Title = "Config",
-						Content = "Saved config '"..tostring(configName).."'",
-						Icon = "settings",
-						Duration = 4,
-					});
-
-					local code = game:GetService('HttpService'):JSONEncode(flags);
-
-					res:SaveConfig(configName , code);
-					res:ReloadConfig();
-				end;
-			end);
-
-			DeleteButton.MouseButton1Click:Connect(function()
-				if import and import.Name then
-
-					Fatal.Notifier:Notify({
-						Title = "Config",
-						Content = "Deleted config '"..tostring(import.Name).."'",
-						Icon = "settings",
-						Duration = 4,
-					});
-
-					res:DeleteConfig(import.Name);
-					res:ReloadConfig();
-				end;
-			end)
-		end,
-	});
-
-	return res;
+        end;
+    end;
 end;
 
 function Fatality.new(Window: Window)
@@ -4181,7 +3892,7 @@ function Fatality.new(Window: Window)
 	local UICorner_6 = Instance.new("UICorner")
 	local InfoButton = Instance.new("ImageButton")
 	local SearchButton = Instance.new("ImageButton")
-	local SaveButton = Instance.new("ImageButton")
+	
 
 	Fatality.WindowFlags[Fatalitywin] = {};
 
@@ -4244,9 +3955,6 @@ function Fatality.new(Window: Window)
 				ImageTransparency = 0.5
 			})
 
-			Fatality:CreateAnimation(SaveButton,0.25,{
-				ImageTransparency = 0.5
-			})
 
 			Fatality:CreateAnimation(HeaderText,0.35,{
 				TextStrokeTransparency = 0.640,
@@ -4281,13 +3989,7 @@ function Fatality.new(Window: Window)
 				Position = UDim2.new(0,10,0.5, 0)
 			})
 
-			Fatality:CreateAnimation(SaveButton,0.1,Enum.EasingStyle.Back,{
-				Position = UDim2.new(0,35,0.5, 0)
-			})
 
-			Fatality:CreateAnimation(DropShadow,0.35,{
-				ImageTransparency = 0.75
-			})
 		else
 			table.clear(Fatality.DragBlacklist);
 
@@ -4295,9 +3997,6 @@ function Fatality.new(Window: Window)
 				v.ValueSelect(false);
 			end;
 
-			Fatality:CreateAnimation(SaveButton,0.35,{
-				Position = UDim2.new(0,35,1, 20)
-			})
 
 			Fatality:CreateAnimation(SearchButton,0.35,{
 				Position = UDim2.new(0,10,1, 20)
@@ -4344,9 +4043,6 @@ function Fatality.new(Window: Window)
 				ImageTransparency = 1
 			})
 
-			Fatality:CreateAnimation(SaveButton,0.35,{
-				ImageTransparency = 1
-			})
 
 			Fatality:CreateAnimation(HeaderLineShadow,0.5,{
 				BackgroundTransparency = 1,
@@ -4643,131 +4339,6 @@ function Fatality.new(Window: Window)
 
 	function Fatal:GetFlags()
 		return Fatality.WindowFlags[Fatalitywin];
-	end;
-
-	function Fatal:AddConfig()
-		local ConfigButton = Instance.new("ImageButton")
-
-		ConfigButton.Name = "ConfigButton"
-		ConfigButton.Parent = Bottom;
-		ConfigButton.AnchorPoint = Vector2.new(0, 0.5)
-		ConfigButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-		ConfigButton.BackgroundTransparency = 1.000
-		ConfigButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
-		ConfigButton.BorderSizePixel = 0
-		ConfigButton.Position = UDim2.new(0, 57, 0.5, 0)
-		ConfigButton.Size = UDim2.new(0, 16, 0, 16)
-		ConfigButton.ZIndex = 4
-		ConfigButton.Image = "rbxassetid://10723387721"
-		ConfigButton.ImageTransparency = 0.500;
-
-		Fatality:CreateHover(ConfigButton,function(bool)
-			if bool then
-				Fatality:CreateAnimation(ConfigButton,0.3,{
-					ImageTransparency = 0.2500;
-				})
-			else
-				Fatality:CreateAnimation(ConfigButton,0.3,{
-					ImageTransparency = 0.500;
-				})
-			end;
-		end);
-
-		return Fatality:CreateConfigWindow(Fatalitywin,Fatal,ConfigButton);
-	end;
-
-	function Fatal:LoadConfig(config)
-
-		for i,v in next , config do
-			if i ~= "Info" then
-				local Element = Fatality.WindowFlags[Fatalitywin][i];
-
-				if Element then
-
-					local Value = v.Value;
-					local MainValue;
-
-					task.spawn(function()
-						if Value.Type == "String" then
-							Element:SetValue(tostring(Value.Value));
-						elseif Value.Type == "Boolean" then
-							Element:SetValue((typeof(Value.Value) == 'boolean' and Value.Value) or (Value.Value == "true" and true or false));
-						elseif Value.Type == "Number" then
-							Element:SetValue(Value.Value);
-						elseif Value.Type == "Color3" then
-							Element:SetValue(Color3.new(Value.Value.R,Value.Value.G,Value.Value.B) , Value.Value.Transparency);
-						elseif Value.Type == "Table" then
-							Element:SetValue(Value.Value);
-
-						end;
-					end);
-				end;
-
-			end;
-		end;
-	end;
-
-	function Fatal:GetFlagConfig()
-		local Flags = Fatal:GetFlags();
-
-		local ConfigElement = {};
-
-		for i,v in next , Flags do
-			local ValueData = {};
-			local Value = v:GetValue();
-
-			if typeof(Value) == "string" then
-				ValueData.Type = "String";
-				ValueData.Value = Value;
-			elseif typeof(Value) == "boolean" then
-				ValueData.Type = "Boolean";
-				ValueData.Value = Value;
-			elseif typeof(Value) == "number" then
-				ValueData.Type = "Number";
-				ValueData.Value = Value;
-			elseif typeof(Value) == "Color3" then
-				ValueData.Type = "Color3";
-
-				local Color = Value.Color;
-				local Transparency = Value.Transparency;
-
-				ValueData.Value = {
-					R = Color.R,
-					G = Color.G,
-					B = Color.B,
-
-					Transparency = Transparency
-				};
-			elseif typeof(Value) == "table" then
-				if Value.Color and Value.Transparency then
-					ValueData.Type = "Color3";
-
-					local Color = Value.Color;
-					local Transparency = Value.Transparency;
-
-					ValueData.Value = {
-						R = Color.R,
-						G = Color.G,
-						B = Color.B,
-
-						Transparency = Transparency
-					};
-				else
-					ValueData.Type = "Table";
-					ValueData.Value = Value;
-				end;
-			else
-				ValueData.Type = "Unknow";
-				ValueData.Value = nil;
-			end;
-
-			rawset(ConfigElement,i,{
-				FlagId = v.Flag,
-				Value = ValueData,
-			})
-		end;
-
-		return ConfigElement;
 	end;
 
 	function Fatal:AddMenu(Menu : Menu)
@@ -5819,47 +5390,6 @@ function Fatality.new(Window: Window)
 		SearchButton.ZIndex = 4
 		SearchButton.Image = "rbxassetid://10734943674"
 		SearchButton.ImageTransparency = 0.500
-
-		SaveButton.Name = Fatality:RandomString()
-		SaveButton.Parent = Bottom
-		SaveButton.AnchorPoint = Vector2.new(0, 0.5)
-		SaveButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-		SaveButton.BackgroundTransparency = 1.000
-		SaveButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
-		SaveButton.BorderSizePixel = 0
-		SaveButton.Position = UDim2.new(0, 35, 0.5, 0)
-		SaveButton.Size = UDim2.new(0, 16, 0, 16)
-		SaveButton.ZIndex = 4
-		SaveButton.Image = "rbxassetid://10734941499"
-		SaveButton.ImageTransparency = 0.500
-
-		Fatality:CreateHover(SaveButton,function(bool)
-			if bool then
-				Fatality:CreateAnimation(SaveButton,0.5,{
-					ImageTransparency = 0.1
-				})
-			else
-				Fatality:CreateAnimation(SaveButton,0.5,{
-					ImageTransparency = 0.5
-				})
-			end	
-		end);
-
-		Fatality:CreateHover(InfoButton,function(bool)
-			if bool then
-				Fatality:CreateAnimation(InfoButton,0.5,{
-					ImageTransparency = 0.1
-				})
-			else
-				Fatality:CreateAnimation(InfoButton,0.5,{
-					ImageTransparency = 0.5
-				})
-			end	
-		end);
-
-		function Fatal:AddSave(callback)
-			SaveButton.MouseButton1Click:Connect(callback);
-		end;
 
 		function Fatal:AddInfo(callback)
 			InfoButton.MouseButton1Click:Connect(callback);
