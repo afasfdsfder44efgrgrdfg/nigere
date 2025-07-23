@@ -5076,7 +5076,7 @@ function Compkiller.new(Config : Window)
 	end;
 
 	Config = Compkiller.__CONFIG(Config , {
-		Name = "Trident",
+		Name = "COMPKILLER",
 		Keybind = "Insert",
 		Logo = Compkiller.Logo;
 		Scale = Compkiller.Scale.Window,
