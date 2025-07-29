@@ -228,6 +228,7 @@ local NEVERLOSE = {
 		SectionColor = Color3.fromRGB(10, 11, 13),
 		StrokeColor = Color3.fromRGB(28, 28, 28),
 		ButtonBlackgroundColor = Color3.fromRGB(13, 13, 13),
+		SearchColor = Color3.fromRGB(14, 14, 14),
 		MewColor1 = Color3.fromRGB(8, 8, 8),
 		MewColor2 = Color3.fromRGB(8, 8, 8)
 	},
@@ -248,7 +249,7 @@ function NEVERLOSE:AddWindow(NameScriptHub,Text,name,UICustomSize)
 		NEVERLOSE.Themes.SectionColor = Color3.fromRGB(0, 17, 35)
 		NEVERLOSE.Themes.StrokeColor = Color3.fromRGB(3, 35, 50)
 		NEVERLOSE.Themes.ButtonBlackgroundColor = Color3.fromRGB(2, 5, 22)
-
+		NEVERLOSE.Themes.SearchColor = Color3.fromRGB(0, 17, 35)
 	end
 	
 	local WindowFunctinos={}
@@ -674,7 +675,6 @@ end)
 updateDPI()
 
 
-
 -- Padding so text doesn't overlap the icon
 local Padding = Instance.new("UIPadding")
 Padding.Parent = TextBox
@@ -866,82 +866,6 @@ Sound2.Ended:Connect(function()
 	UICorner_6.CornerRadius = UDim.new(0, 4)
 	UICorner_6.Parent = outlo_3
 	
-local mainFrame_2b = Instance.new("Frame")
-local saveButton_3c = Instance.new("TextButton")
-local stroke_4d = Instance.new("UIStroke")
-local corner_5e = Instance.new("UICorner")
-local imageLabel_6f = Instance.new("ImageLabel")
-
-mainFrame_2b.Name = "MainFrame"
-mainFrame_2b.Parent = Frame
-mainFrame_2b.BackgroundTransparency = 1
-mainFrame_2b.Position = UDim2.new(0.243, 0, 0.025, 0)
-mainFrame_2b.Size = UDim2.new(0.606889784, 0, 0.0627818182, -13)
-
--- Save Button (parented to Frame)
-saveButton_3c.Name = "SaveB"
-saveButton_3c.Parent = mainFrame_2b
-saveButton_3c.BackgroundColor3 = Color3.fromRGB(10, 10, 10)
-saveButton_3c.Position = UDim2.new(0, 0, 0, 0)
-saveButton_3c.Size = UDim2.new(0.199998885, 0, 1, 0)
-saveButton_3c.ZIndex = 5
-saveButton_3c.Text = "Save"
-saveButton_3c.TextColor3 = Color3.fromRGB(255, 255, 255)
-saveButton_3c.TextTransparency = 0.300
-saveButton_3c.TextSize = 11
-saveButton_3c.Font = Enum.Font.GothamBold
-saveButton_3c.AutoButtonColor = false
-
--- Stroke (parented to Save Button)
-stroke_4d.Name = "Stroke"
-stroke_4d.Parent = saveButton_3c
-stroke_4d.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-stroke_4d.Color = NEVERLOSE.Themes.StrokeColor
-stroke_4d.Thickness = 1
-stroke_4d.Transparency = 0
-
--- Corner (parented to Save Button)
-corner_5e.Parent = saveButton_3c
-corner_5e.CornerRadius = UDim.new(0, 2)
-
--- ImageLabel (parented to Save Button)
-imageLabel_6f.Name = "ImageIcon"
-imageLabel_6f.Parent = saveButton_3c
-imageLabel_6f.Image = "http://www.roblox.com/asset/?id=6035067857"
-imageLabel_6f.ImageColor3 = Color3.fromRGB(255, 255, 255)
-imageLabel_6f.ImageTransparency = 0.300
-imageLabel_6f.BackgroundTransparency = 1
-imageLabel_6f.Position = UDim2.new(0.1, 0, 0.1, 0)
-imageLabel_6f.Size = UDim2.new(0.188, 0, 0.788, 0)
-imageLabel_6f.ZIndex = 6
-
-saveButton_3c.MouseEnter:Connect(function()
-	saveButton_3c.TextTransparency = 0
-	imageLabel_6f.ImageTransparency = 0			
-end)
-	
-saveButton_3c.MouseButton1Click:Connect(function()
-local Sound2 = Instance.new("Sound")
-Sound2.SoundId = "rbxassetid://6895079853"
-Sound2.Looped = false
-Sound2.Volume = 1
-Sound2.Parent = game:GetService("SoundService")
-Sound2:Play()
-
-Sound2.Ended:Connect(function()
-	Sound2:Destroy()
-     end)
-end)
-
-saveButton_3c.MouseLeave:Connect(function()
-	saveButton_3c.TextTransparency = 0.3
-	imageLabel_6f.ImageTransparency = 0.3
-end)
-
--- style
-loadstring(game:HttpGet("https://raw.githubusercontent.com/CludeHub/SourceCludeLib/refs/heads/main/Style.lua"))()
---
-
 	
 local buttons = Instance.new("ImageButton")
 buttons.Size = UDim2.new(0, 70, 0, 70)
